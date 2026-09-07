@@ -1,0 +1,197 @@
+@font-face {
+    font-family: zodiak;
+    src: url(Fonts/Zodiak-Regular.otf);
+}
+@font-face {
+    font-family: Bevellier;
+    src: url(Fonts/Bevellier-Medium.otf);
+}
+@font-face {
+    font-family: clash-display-sb;
+    src: url(Fonts/ClashDisplay-Semibold.otf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body::selection {
+    background-color: #e6d700;
+}
+
+#velaris-container {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.velaris-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+}
+
+.velaris-inner h1 {
+    font-family: zodiak;
+    color: black;
+}
+
+h1 {
+    font-family: clash-display-sb;
+
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+}
+
+.logo-svg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-svg svg {
+    width: 4rem;
+    height: auto;
+    margin-top: 0.2rem;
+}
+
+.navigation {
+    position: absolute;
+    left: 0;
+}
+
+.nav-bar {
+    margin: 0 0.5rem;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-bar a {
+    font-family: clash-display-sb;
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-bar a:hover {
+    opacity: 1;
+}
+
+.nav-bar a::before {
+    transition: 300ms;
+    height: 0.15rem;
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 0%;
+    bottom: -0.15rem;
+}
+
+.nav-bar a:hover::before {
+    width: 100%;
+}
+
+.target-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 2147483647;
+  mix-blend-mode: difference;
+}
+
+.target-cursor-wrapper svg {
+    width: 18rem;
+    height: 18rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%) scale(1);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease; 
+}
+
+.target-cursor-wrapper.is-hovering svg {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.5); 
+}
+
+.cursor-snap-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0px;
+    height: 0px; 
+    transform: translate(-50%, -50%);
+    border: 2px solid #e6d700; 
+    border-radius: 8px; 
+    opacity: 0; 
+    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                height 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.target-cursor-wrapper.is-hovering .cursor-snap-box {
+    opacity: 1;
+}
+
+.search-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 7rem;
+}
+
+.search-input {
+    padding: 0.5rem;
+    font-family: clash-display-sb;
+    border-radius: 0.3rem;
+    border: 0.1rem solid black;
+    width: 25rem;
+    caret-color: black;
+    caret-shape: block;
+    font-size: 1rem;
+}
+
+.item-sec {
+    display: grid;
+    position: relative;
+    z-index: 1;
+    margin: 2rem;
+    min-height: 75rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+}
+
+.item1, .item2 {
+    background-color: white;
+    border-radius: 3rem;
+    opacity: 0.2;
+}
