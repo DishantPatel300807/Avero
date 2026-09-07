@@ -195,3 +195,19 @@ h1 {
     border-radius: 3rem;
     opacity: 0.2;
 }
+
+.cart-svg {
+    width: 2rem;
+    height: auto;
+    margin-top: 0.3rem;
+    margin-right: 2rem;
+}
+
+.cart-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    padding-right: 3.5rem;
+}

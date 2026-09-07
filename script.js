@@ -177,7 +177,7 @@ void main() {
 
   // --- New SVG Cursor Animation Logic ---
   const cursor = document.getElementById("target-cursor");
-  const snapTargets = document.querySelectorAll(".nav-bar a, .search-input");
+  const snapTargets = document.querySelectorAll(".nav-bar a, .search-input, .cart-svg");
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
