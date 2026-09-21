@@ -235,3 +235,17 @@ const snapBox = document.querySelector(".cursor-snap-box");
   animateCursor();
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("cartBtn");
+  createCartButton(btn, { text: "Cart Button" });
+});
+
+const cartBtn = document.getElementById("cartBtn");
+const cartCard = document.getElementById("cart-card");
+
+if (cartBtn) {
+  cartBtn.addEventListener("click", () => {
+    cartCard.classList.remove("hidden");
+  });
+}
