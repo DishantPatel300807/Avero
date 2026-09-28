@@ -202,6 +202,19 @@ h1 {
     
 }
 
+.item2 {
+    background-image: url(Photos/Omni\ ForestGreen.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 3rem ;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
 .cart-svg {
     width: 2rem;
     height: auto;
@@ -278,6 +291,9 @@ h1 {
 .item1:hover .item-heading {
     width: 40%;
 } 
+.item2:hover .item-heading {
+    width: 40%;
+} 
 
 .desc {
     color: white;
@@ -313,6 +329,11 @@ h1 {
 }
 
 .item1:hover .addToCartBtn {
+    visibility: visible;
+    opacity: 1;
+}
+
+.item2:hover .addToCartBtn {
     visibility: visible;
     opacity: 1;
 }

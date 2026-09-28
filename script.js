@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   // Equivalent of the React component's props
   const config = {
@@ -177,7 +180,7 @@ void main() {
 
   // --- New SVG Cursor Animation Logic ---
   const cursor = document.getElementById("target-cursor");
-  const snapTargets = document.querySelectorAll(".nav-bar a, .search-input, .cart-svg");
+  const snapTargets = document.querySelectorAll(".nav-bar a, .search-input, .cart-svg, .atc-btn");
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
@@ -249,3 +252,4 @@ if (cartBtn) {
     cartCard.classList.remove("hidden");
   });
 }
+
