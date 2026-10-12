@@ -253,3 +253,18 @@ if (cartBtn) {
   });
 }
 
+const searchInput = document.getElementById("search-input");
+const productCards = document.getElementsByClassName("product-card");
+    searchInput.addEventListener("keyup", function() {
+      const searchValue = searchInput.value.toLowerCase();
+      let visibleProducts = 0;
+      for (i = 0; i < productCards.length; i++) {
+        const productName = productCards[i].querySelector("h1").textContent.toLowerCase();
+        if (productName.includes(searchValue)) {
+          productCards[i].style.display = "flex";
+        } else {
+          productCards[i].style.display = "none";
+        }
+      }
+
+});
