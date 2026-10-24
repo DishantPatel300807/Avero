@@ -247,9 +247,16 @@ document.addEventListener("DOMContentLoaded", () => {
 const cartBtn = document.getElementById("cartBtn");
 const cartCard = document.getElementById("cart-card");
 
-if (cartBtn) {
-  cartBtn.addEventListener("click", () => {
+if (cartBtn && cartCard) {
+  cartBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
     cartCard.classList.remove("hidden");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!cartCard.contains(event.target)) {
+      cartCard.classList.add("hidden");
+    }
   });
 }
 
