@@ -239,11 +239,6 @@ const snapBox = document.querySelector(".cursor-snap-box");
 
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("cartBtn");
-  createCartButton(btn, { text: "Cart Button" });
-});
-
 const cartBtn = document.getElementById("cartBtn");
 const cartCard = document.getElementById("cart-card");
 
@@ -274,4 +269,15 @@ const productCards = document.getElementsByClassName("product-card");
         }
       }
 
+});
+
+const cartCount = document.getElementById("cartCount");
+const atcBtn = document.querySelectorAll(".atc-btn");
+
+let cart = 0;
+atcBtn.forEach(function(button) {
+  button.addEventListener("click", function() {
+    cart++;
+    cartCount.textContent = cart;
+  });
 });
