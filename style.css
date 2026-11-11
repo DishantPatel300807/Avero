@@ -275,26 +275,6 @@ h1 {
     font-size: 1.5rem;
 }
 
-.item-heading {
-    height: 1fr;
-    background-color: black;
-    opacity: 0.5;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    border-radius: 3rem;
-    transition: width 0.5s ease; 
-}
-
-.item1:hover .item-heading {
-    width: 40%;
-} 
-.item2:hover .item-heading {
-    width: 40%;
-} 
-
 .desc {
     color: white;
     margin: 0;
@@ -328,12 +308,17 @@ h1 {
     cursor: pointer;
 }
 
-.item1:hover .addToCartBtn {
-    visibility: visible;
-    opacity: 1;
+.item-carousel {
+    width: 100%;
+    z-index: 2;
 }
 
-.item2:hover .addToCartBtn {
-    visibility: visible;
-    opacity: 1;
+.track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.item {
+    width: 50rem;
 }
