@@ -281,3 +281,34 @@ atcBtn.forEach(function(button) {
     cartCount.textContent = cart;
   });
 });
+
+const track = document.querySelector('.track');
+const carousel = document.querySelector('.item-carousel');
+
+track.innerHTML += track.innerHTML;
+
+let currentX = 0;
+let targetSpeed = 2;
+let currentSpeed = targetSpeed;
+
+carousel.addEventListener('mouseenter', () => {
+  targetSpeed = 0.2;
+});
+
+carousel.addEventListener('mouseleave', () => {
+  targetSpeed = 2;
+});
+
+function animationCarousel() {
+  currentSpeed += (targetSpeed - currentSpeed) * 0.2;
+  currentX -= currentSpeed;
+
+  if (Math.abs(currentX) >= track.scrollWidth / 2) {
+    currentX = 0;
+  }
+
+  track.style.transform = `translateX(${currentX}px)`;
+  requestAnimationFrame(animationCarousel);
+}
+
+animationCarousel();
