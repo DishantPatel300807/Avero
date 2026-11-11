@@ -285,7 +285,12 @@ atcBtn.forEach(function(button) {
 const track = document.querySelector('.track');
 const carousel = document.querySelector('.item-carousel');
 
-track.innerHTML += track.innerHTML;
+const originalWidth = track.scrollWidth;
+const originalContent = track.innerHTML;
+
+while (track.scrollWidth < window.innerWidth + originalWidth) {
+  track.innerHTML += originalContent;
+}
 
 let currentX = 0;
 let targetSpeed = 2;
@@ -303,7 +308,7 @@ function animationCarousel() {
   currentSpeed += (targetSpeed - currentSpeed) * 0.2;
   currentX -= currentSpeed;
 
-  if (Math.abs(currentX) >= track.scrollWidth / 2) {
+  if (Math.abs(currentX) >= originalWidth) {
     currentX = 0;
   }
 

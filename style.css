@@ -311,20 +311,19 @@ h1 {
 .item-carousel {
     width: 100%;
     z-index: 2;
-    min-height: 75rem;
+    min-height: 25rem;
     overflow: hidden;
+    margin-top: 5rem;
 }
 
 .track {
     display: flex;
     width: max-content;
-    will-change: transform;
 }
 .item {
-    width: 50rem;
-    height: 75rem;
+    width: 35rem;
+    height: 25rem;
     flex-shrink: 0;
-    border-radius: 1rem;
     overflow: hidden;
 }
 
