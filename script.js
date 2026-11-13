@@ -293,7 +293,7 @@ while (track.scrollWidth < window.innerWidth + originalWidth) {
 }
 
 let currentX = 0;
-let targetSpeed = 2;
+let targetSpeed = 1;
 let currentSpeed = targetSpeed;
 
 carousel.addEventListener('mouseenter', () => {
@@ -301,7 +301,7 @@ carousel.addEventListener('mouseenter', () => {
 });
 
 carousel.addEventListener('mouseleave', () => {
-  targetSpeed = 2;
+  targetSpeed = 1;
 });
 
 function animationCarousel() {
