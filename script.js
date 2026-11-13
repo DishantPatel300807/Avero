@@ -319,16 +319,17 @@ function animationCarousel() {
 animationCarousel();
 
 const modalImg = document.getElementById("modal-img");
+const productCardElement = document.getElementById("product-card");
 
 if (cartBtn && cartCard) {
   cartBtn.addEventListener("click", (event) => {
     event.stopPropagation();
     cartCard.classList.remove("hidden");
-    if (productCards) productCards.classList.add("hidden");
+    if (productCardElement) productCardElement.classList.add("hidden");
   });
 }
 
-if (track && productCards) {
+if (track && productCardElement) {
   track.addEventListener("click", (event) => {
     const clickedItem = event.target.closest(".item");
     if (!clickedItem) {
@@ -339,7 +340,7 @@ if (track && productCards) {
     const imgSrc = clickedItem.querySelector('img').src;
     modalImg.src = imgSrc;
 
-    productCards.classList.remove("hidden");
+    productCardElement.classList.remove("hidden");
     if (cartCard) {
       cartCard.classList.add("hidden");
     }
@@ -350,7 +351,7 @@ document.addEventListener("click", (event) => {
   if (cartCard && !cartCard.contains(event.target) && !cartCard.classList.contains("hidden")) {
     cartCard.classList.add("hidden");
   }
-  if (productCards && !productCards.contains(event.target) && !productCards.classList.contains("hidden")) {
-    productCards.classList.add("hidden");
+  if (productCardElement && !productCardElement.contains(event.target) && !productCardElement.classList.contains("hidden")) {
+    productCardElement.classList.add("hidden");
   }
 });
